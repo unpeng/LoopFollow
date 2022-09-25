@@ -11,6 +11,7 @@
 		AADB6C8A28E02AC80060DA9E /* StringSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8928E02AC80060DA9E /* StringSHA1.swift */; };
 		AADB6C8C28E02C450060DA9E /* BolusEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */; };
 		AADB6C8E28E02C7C0060DA9E /* RemoteCommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */; };
+		AADB6C9028E03B170060DA9E /* Environment+Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8F28E03B170060DA9E /* Environment+Authenticate.swift */; };
 		DD152D3B24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */; };
 		DD98F54424BCEFEE0007425A /* ShareClientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */; };
 		DDCF979424C0D380002C9752 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF979324C0D380002C9752 /* UIViewExtension.swift */; };
@@ -182,6 +183,7 @@
 		AADB6C8928E02AC80060DA9E /* StringSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSHA1.swift; sourceTree = "<group>"; };
 		AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolusEntryViewController.swift; sourceTree = "<group>"; };
 		AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommandController.swift; sourceTree = "<group>"; };
+		AADB6C8F28E03B170060DA9E /* Environment+Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Authenticate.swift"; sourceTree = "<group>"; };
 		DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplaySettingsViewController.swift; sourceTree = "<group>"; };
 		DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareClientExtension.swift; sourceTree = "<group>"; };
 		DDCF979324C0D380002C9752 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				DDCF979324C0D380002C9752 /* UIViewExtension.swift */,
 				FC1BB3A7252CA4C5003839C2 /* UIImageExtension.swift */,
 				AADB6C8928E02AC80060DA9E /* StringSHA1.swift */,
+				AADB6C8F28E03B170060DA9E /* Environment+Authenticate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				FC1BDD3224A2585C001B652C /* DataStructs.swift in Sources */,
 				FCC6886524898EEE00A0279D /* UserDefaults.swift in Sources */,
 				FC16A97F249969E2003D6245 /* Graphs.swift in Sources */,
+				AADB6C9028E03B170060DA9E /* Environment+Authenticate.swift in Sources */,
 				FC8589BF252B54F500C8FC73 /* Mobileprovision.swift in Sources */,
 				DD152D3B24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift in Sources */,
 				DDCF979C24C14EFB002C9752 /* AdvancedSettingsViewController.swift in Sources */,

@@ -15,7 +15,7 @@ import LocalAuthentication
 
 class BolusEntryViewController: FormViewController {
 
-    //var authenticate: AuthenticationChallenge = LocalAuthentication.deviceOwnerCheck
+    var authenticate: AuthenticationChallenge = LocalAuthentication.deviceOwnerCheck
     
     var appStateController: AppStateController?
    
