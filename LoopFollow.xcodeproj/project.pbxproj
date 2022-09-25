@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F1335F351590E573D8E6962 /* Pods_LoopFollow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D55B42A22051DAD69E89D0 /* Pods_LoopFollow.framework */; };
 		AADB6C8A28E02AC80060DA9E /* StringSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8928E02AC80060DA9E /* StringSHA1.swift */; };
+		AADB6C8C28E02C450060DA9E /* BolusEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */; };
+		AADB6C8E28E02C7C0060DA9E /* RemoteCommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */; };
 		DD152D3B24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */; };
 		DD98F54424BCEFEE0007425A /* ShareClientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */; };
 		DDCF979424C0D380002C9752 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF979324C0D380002C9752 /* UIViewExtension.swift */; };
@@ -178,6 +180,8 @@
 		AADB6C8728E025370060DA9E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		AADB6C8828E028B20060DA9E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		AADB6C8928E02AC80060DA9E /* StringSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSHA1.swift; sourceTree = "<group>"; };
+		AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolusEntryViewController.swift; sourceTree = "<group>"; };
+		AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommandController.swift; sourceTree = "<group>"; };
 		DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplaySettingsViewController.swift; sourceTree = "<group>"; };
 		DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareClientExtension.swift; sourceTree = "<group>"; };
 		DDCF979324C0D380002C9752 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -627,6 +631,8 @@
 				DDCF979724C1489C002C9752 /* GraphSettingsViewController.swift */,
 				DDCF979924C14DB4002C9752 /* WatchSettingsViewController.swift */,
 				DDCF979B24C14EFB002C9752 /* AdvancedSettingsViewController.swift */,
+				AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */,
+				AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 				DDCF979C24C14EFB002C9752 /* AdvancedSettingsViewController.swift in Sources */,
 				FC97881C2485969B00A7906C /* MainViewController.swift in Sources */,
 				FC1BB3A8252CA4C5003839C2 /* UIImageExtension.swift in Sources */,
+				AADB6C8C28E02C450060DA9E /* BolusEntryViewController.swift in Sources */,
 				DDCF979624C1443C002C9752 /* GeneralSettingsViewController.swift in Sources */,
 				FCC0FAC224922A22003E610E /* DictionaryKeyPath.swift in Sources */,
 				FC9788182485969B00A7906C /* AppDelegate.swift in Sources */,
@@ -902,6 +909,7 @@
 				FCE537BC249A4D7D00F80BF8 /* carbBolusArrays.swift in Sources */,
 				FCD2A27D24C9D044009F7B7B /* Globals.swift in Sources */,
 				DDCF979A24C14DB4002C9752 /* WatchSettingsViewController.swift in Sources */,
+				AADB6C8E28E02C7C0060DA9E /* RemoteCommandController.swift in Sources */,
 				FCA2DDE62501095000254A8C /* Timers.swift in Sources */,
 				FC16A98124996C07003D6245 /* DateTime.swift in Sources */,
 				FC3CAB022493B6220068A152 /* BackgroundTaskAudio.swift in Sources */,

@@ -63,4 +63,11 @@ class AppStateController {
    
    // Info Data Settings State; no need for flags
    var infoDataSettingsChanged: Bool = false
+    
+    // edit by peng
+    var delegateFunc:((TimeInterval) ->())?
+    
+    func Execute(time: TimeInterval = 1){
+        delegateFunc!(time)
+    }
 }

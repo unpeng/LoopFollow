@@ -33,6 +33,10 @@ class UserDefaultsRepository {
     static let infoSort = UserDefaultsValue<[Int]>(key: "infoSort", default: [0,1,2,3,4,5,6,7,8,9])
     static let infoVisible = UserDefaultsValue<[Bool]>(key: "infoVisible", default: [true,true,true,true,true,true,true,true,true,true])
     
+    // Remote Settings
+    // edit by peng
+    static let highRefreshRateTimes = UserDefaultsValue<Int>(key: "highRefreshRateTimes", default: 0)
+    
     // Nightscout Settings
     static let showNS = UserDefaultsValue<Bool>(key: "showNS", default: false)
     static let url = UserDefaultsValue<String>(key: "url", default: "")
