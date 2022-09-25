@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F1335F351590E573D8E6962 /* Pods_LoopFollow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D55B42A22051DAD69E89D0 /* Pods_LoopFollow.framework */; };
+		AADB6C8A28E02AC80060DA9E /* StringSHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8928E02AC80060DA9E /* StringSHA1.swift */; };
 		DD152D3B24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */; };
 		DD98F54424BCEFEE0007425A /* ShareClientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */; };
 		DDCF979424C0D380002C9752 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF979324C0D380002C9752 /* UIViewExtension.swift */; };
@@ -175,6 +176,8 @@
 		059B0FA59AABFE72FE13DDDA /* Pods-LoopFollow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopFollow.release.xcconfig"; path = "Target Support Files/Pods-LoopFollow/Pods-LoopFollow.release.xcconfig"; sourceTree = "<group>"; };
 		A7D55B42A22051DAD69E89D0 /* Pods_LoopFollow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopFollow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADB6C8728E025370060DA9E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		AADB6C8828E028B20060DA9E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		AADB6C8928E02AC80060DA9E /* StringSHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSHA1.swift; sourceTree = "<group>"; };
 		DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplaySettingsViewController.swift; sourceTree = "<group>"; };
 		DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareClientExtension.swift; sourceTree = "<group>"; };
 		DDCF979324C0D380002C9752 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -381,6 +384,7 @@
 				DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */,
 				DDCF979324C0D380002C9752 /* UIViewExtension.swift */,
 				FC1BB3A7252CA4C5003839C2 /* UIImageExtension.swift */,
+				AADB6C8928E02AC80060DA9E /* StringSHA1.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -555,6 +559,7 @@
 				FCC688542489367300A0279D /* helpers */,
 				FCC688512489363F00A0279D /* repository */,
 				FC16A97624995FEE003D6245 /* Application */,
+				AADB6C8828E028B20060DA9E /* Header.h */,
 			);
 			path = LoopFollow;
 			sourceTree = "<group>";
@@ -870,6 +875,7 @@
 				FC16A97A24996673003D6245 /* NightScout.swift in Sources */,
 				FCC6886924898FB100A0279D /* UserDefaultsValueGroups.swift in Sources */,
 				FC16A97D24996747003D6245 /* Alarms.swift in Sources */,
+				AADB6C8A28E02AC80060DA9E /* StringSHA1.swift in Sources */,
 				FC16A97B249966A3003D6245 /* AlarmSound.swift in Sources */,
 				FCFEECA2248857A600402A7F /* SettingsViewController.swift in Sources */,
 				FCFEECA02488157B00402A7F /* Chart.swift in Sources */,
@@ -983,6 +989,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LoopFollow/Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1038,6 +1045,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LoopFollow/Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
