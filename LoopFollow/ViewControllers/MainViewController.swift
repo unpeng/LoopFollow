@@ -145,16 +145,16 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
 
         // reset the infoTable names in case we add or delete items
         UserDefaultsRepository.infoNames.value.removeAll()
-        UserDefaultsRepository.infoNames.value.append("IOB")
-        UserDefaultsRepository.infoNames.value.append("COB")
-        UserDefaultsRepository.infoNames.value.append("Basal")
-        UserDefaultsRepository.infoNames.value.append("Override")
-        UserDefaultsRepository.infoNames.value.append("Battery")
-        UserDefaultsRepository.infoNames.value.append("Pump")
-        UserDefaultsRepository.infoNames.value.append("SAGE")
-        UserDefaultsRepository.infoNames.value.append("CAGE")
+        UserDefaultsRepository.infoNames.value.append("活性胰岛素")
+        UserDefaultsRepository.infoNames.value.append("活性碳水")
+        UserDefaultsRepository.infoNames.value.append("基础率")
+        UserDefaultsRepository.infoNames.value.append("覆盖")
+        UserDefaultsRepository.infoNames.value.append("手机电量")
+        UserDefaultsRepository.infoNames.value.append("泵容量/电量")
+        UserDefaultsRepository.infoNames.value.append("探头")
+        UserDefaultsRepository.infoNames.value.append("管路")
         UserDefaultsRepository.infoNames.value.append("Rec. Bolus")
-        UserDefaultsRepository.infoNames.value.append("Pred.")
+        UserDefaultsRepository.infoNames.value.append("预测高低峰")
         
         // Reset deprecated settings
         UserDefaultsRepository.debugLog.value = false;
@@ -363,9 +363,9 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         if bgData.count > 0 {
             let deltaTime = (TimeInterval(Date().timeIntervalSince1970)-bgData[bgData.count - 1].date) / 60
             minAgoBG = Double(TimeInterval(Date().timeIntervalSince1970)-bgData[bgData.count - 1].date)
-            MinAgoText.text = String(Int(deltaTime)) + " min ago"
-            snoozer.MinAgoLabel.text = String(Int(deltaTime)) + " min ago"
-            latestMinAgoString = String(Int(deltaTime)) + " min ago"
+            MinAgoText.text = String(Int(deltaTime)) + " 分钟前"
+            snoozer.MinAgoLabel.text = String(Int(deltaTime)) + " 分钟前"
+            latestMinAgoString = String(Int(deltaTime)) + " 分钟前"
         } else {
             MinAgoText.text = ""
             snoozer.MinAgoLabel.text = ""

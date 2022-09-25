@@ -1,0 +1,82 @@
+
+/* Class = "UILabel"; text = "High:"; ObjectID = "0Zq-6s-y8B"; */
+"0Zq-6s-y8B.text" = "高位:";
+
+/* Class = "UILabel"; text = "Server"; ObjectID = "2mX-T9-SAm"; */
+"2mX-T9-SAm.text" = "服务器";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "4sd-6h-LSj"; */
+"4sd-6h-LSj.text" = "--";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "CBE-5V-OzJ"; */
+"CBE-5V-OzJ.title" = "设置";
+
+/* Class = "UILabel"; text = "MinAgo"; ObjectID = "HNC-P8-PbV"; */
+"HNC-P8-PbV.text" = "分钟前";
+
+/* Class = "UILabel"; text = "BG"; ObjectID = "Iq3-I1-HX0"; */
+"Iq3-I1-HX0.text" = "BG";
+
+/* Class = "UIButton"; normalTitle = "Snooze"; ObjectID = "Meu-VT-byv"; */
+"Meu-VT-byv.normalTitle" = "Snooze";
+
+/* Class = "UILabel"; text = "Avg BG:"; ObjectID = "Rrh-Zo-cis"; */
+"Rrh-Zo-cis.text" = "平均值:";
+
+/* Class = "UITabBarItem"; title = "Snoozer"; ObjectID = "TdI-rW-rdW"; */
+"TdI-rW-rdW.title" = "控制贪睡";
+
+/* Class = "UILabel"; text = "MinAgo"; ObjectID = "UkG-hw-DVo"; */
+"UkG-hw-DVo.text" = "分钟前";
+
+/* Class = "UILabel"; text = "Est A1C:"; ObjectID = "WV0-Jy-FPs"; */
+"WV0-Jy-FPs.text" = "模拟糖化:";
+
+/* Class = "UILabel"; text = "Delta"; ObjectID = "YCF-22-z3g"; */
+"YCF-22-z3g.text" = "Delta";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "首页";
+
+/* Class = "UITabBarItem"; title = "Alarms"; ObjectID = "c7L-5b-Di9"; */
+"c7L-5b-Di9.title" = "警报";
+
+/* Class = "UITabBarItem"; title = "Nightscout"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Nightscout";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "gif-qe-9mv"; */
+"gif-qe-9mv.text" = "Title";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "hLM-Es-BOa"; */
+"hLM-Es-BOa.text" = "--";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "hfT-xF-eNt"; */
+"hfT-xF-eNt.text" = "详情";
+
+/* Class = "UILabel"; text = "snoozeMinutes"; ObjectID = "iC4-A1-q9b"; */
+"iC4-A1-q9b.text" = "snoozeMinutes";
+
+/* Class = "UILabel"; text = "Std Dev:"; ObjectID = "iXC-Mz-I09"; */
+"iXC-Mz-I09.text" = "标准偏差";
+
+/* Class = "UILabel"; text = "Clock"; ObjectID = "r85-eB-vVd"; */
+"r85-eB-vVd.text" = "Clock";
+
+/* Class = "UILabel"; text = "Low:"; ObjectID = "sUB-nL-H1B"; */
+"sUB-nL-H1B.text" = "低位:";
+
+/* Class = "UILabel"; text = "Delta"; ObjectID = "sb7-g9-JNv"; */
+"sb7-g9-JNv.text" = "Delta";
+
+/* Class = "UILabel"; text = "Alert Name"; ObjectID = "tiA-fs-ZRV"; */
+"tiA-fs-ZRV.text" = "Alert Name";
+
+/* Class = "UILabel"; text = "BG"; ObjectID = "vXU-IW-GOL"; */
+"vXU-IW-GOL.text" = "BG";
+
+/* Class = "UILabel"; text = "In Range:"; ObjectID = "zBu-Uf-0IS"; */
+"zBu-Uf-0IS.text" = "范围内:";
+
+"CbE-5V-OzJ.title" = "远程指令";
+
+
