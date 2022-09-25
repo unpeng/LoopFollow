@@ -344,48 +344,84 @@ extension MainViewController {
             snoozerBG = bgUnits.toDisplayUnits(String(latestBG))
             self.setBGTextColor()
             
-            if let directionBG = entries[latestEntryi].direction {
+//            if let directionBG = entries[latestEntryi].direction {
+//                self.DirectionText.text = self.bgDirectionGraphic(directionBG)
+//                snoozerDirection = self.bgDirectionGraphic(directionBG)
+//                self.latestDirectionString = self.bgDirectionGraphic(directionBG)
+//            }
+//            else
+//            {
+//                if latestEntryi > 0 {
+//                    let difference = entries[latestEntryi].sgv - entries[latestEntryi - 1].sgv
+//                    let floatValue : Float = Float(difference) * 0.0555
+//                    var directionBG : String = ""
+//                    if floatValue <= 0.19  && floatValue >= -0.19 {
+//                        directionBG = "Flat"
+//                    }
+//                    else if floatValue > 0.19 && floatValue <= 0.5 {
+//                        directionBG = "FortyFiveUp"
+//                    }
+//                    else if floatValue > 0.5 && floatValue <= 1 {
+//                        directionBG = "SingleUp"
+//                    }
+//                    else if floatValue > 1 {
+//                        directionBG = "DoubleUp"
+//                    }
+//                    else if floatValue < -0.19 && floatValue >= -0.5 {
+//                        directionBG = "FortyFiveDown"
+//                    }
+//                    else if floatValue < -0.5 && floatValue >= -1 {
+//                        directionBG = "SingleDown"
+//                    }
+//                    else if floatValue < -1 {
+//                        directionBG = "DoubleDown"
+//                    }
+//                    self.DirectionText.text = self.bgDirectionGraphic(directionBG)
+//                    snoozerDirection = self.bgDirectionGraphic(directionBG)
+//                    self.latestDirectionString = self.bgDirectionGraphic(directionBG)
+//                }
+//                else
+//                {
+//                    self.DirectionText.text = ""
+//                    snoozerDirection = ""
+//                    self.latestDirectionString = ""
+//                }
+//            }
+            
+            if latestEntryi > 0 {
+                let difference = entries[latestEntryi].sgv - entries[latestEntryi - 1].sgv
+                let floatValue : Float = Float(difference) * 0.0555
+                var directionBG : String = ""
+                if floatValue <= 0.19  && floatValue >= -0.19 {
+                    directionBG = "Flat"
+                }
+                else if floatValue > 0.19 && floatValue <= 0.5 {
+                    directionBG = "FortyFiveUp"
+                }
+                else if floatValue > 0.5 && floatValue <= 1 {
+                    directionBG = "SingleUp"
+                }
+                else if floatValue > 1 {
+                    directionBG = "DoubleUp"
+                }
+                else if floatValue < -0.19 && floatValue >= -0.5 {
+                    directionBG = "FortyFiveDown"
+                }
+                else if floatValue < -0.5 && floatValue >= -1 {
+                    directionBG = "SingleDown"
+                }
+                else if floatValue < -1 {
+                    directionBG = "DoubleDown"
+                }
                 self.DirectionText.text = self.bgDirectionGraphic(directionBG)
                 snoozerDirection = self.bgDirectionGraphic(directionBG)
                 self.latestDirectionString = self.bgDirectionGraphic(directionBG)
             }
             else
             {
-                if latestEntryi > 0 {
-                    let difference = entries[latestEntryi].sgv - entries[latestEntryi - 1].sgv
-                    let floatValue : Float = Float(difference) * 0.0555
-                    var directionBG : String = ""
-                    if floatValue <= 0.19  && floatValue >= -0.19 {
-                        directionBG = "Flat"
-                    }
-                    else if floatValue > 0.19 && floatValue <= 0.5 {
-                        directionBG = "FortyFiveUp"
-                    }
-                    else if floatValue > 0.5 && floatValue <= 1 {
-                        directionBG = "SingleUp"
-                    }
-                    else if floatValue > 1 {
-                        directionBG = "DoubleUp"
-                    }
-                    else if floatValue < -0.19 && floatValue >= -0.5 {
-                        directionBG = "FortyFiveDown"
-                    }
-                    else if floatValue < -0.5 && floatValue >= -1 {
-                        directionBG = "SingleDown"
-                    }
-                    else if floatValue < -1 {
-                        directionBG = "DoubleDown"
-                    }
-                    self.DirectionText.text = self.bgDirectionGraphic(directionBG)
-                    snoozerDirection = self.bgDirectionGraphic(directionBG)
-                    self.latestDirectionString = self.bgDirectionGraphic(directionBG)
-                }
-                else
-                {
-                    self.DirectionText.text = ""
-                    snoozerDirection = ""
-                    self.latestDirectionString = ""
-                }
+                self.DirectionText.text = ""
+                snoozerDirection = ""
+                self.latestDirectionString = ""
             }
             
             if deltaBG < 0 {
@@ -750,7 +786,7 @@ extension MainViewController {
             
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional // Use the appropriate positioning for the current locale
-            formatter.allowedUnits = [ .day, .hour ] // Units to display in the formatted string
+            formatter.allowedUnits = [ .day,.hour ] // Units to display in the formatted string
             formatter.zeroFormattingBehavior = [ .pad ] // Pad with zeroes where appropriate for the locale
             
             let formattedDuration = formatter.string(from: secondsAgo)
@@ -823,10 +859,10 @@ extension MainViewController {
             alarms.reloadSnoozeTime(key: "alertSnoozeAllTime", setNil: false, value: snoozeTime)
         }
         
-        if let sageTime = formatter.date(from: (lastSageString as! String))?.timeIntervalSince1970 {
+        if let sageTime = formatter.date(from: (lastSageString ))?.timeIntervalSince1970 {
             let now = dateTimeUtils.getNowTimeIntervalUTC()
             let secondsAgo = now - sageTime
-            let days = 24 * 60 * 60
+            //let days = 24 * 60 * 60
             
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional // Use the appropriate positioning for the current locale

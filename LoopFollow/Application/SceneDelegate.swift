@@ -48,6 +48,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if let vc = viewControllers[i] as? debugViewController {
                vc.appStateController = appStateController
             }
+             if let vc = viewControllers[i] as? RemoteCommandController {
+                vc.appStateController = appStateController
+             }
          }
     }
 
