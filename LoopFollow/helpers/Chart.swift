@@ -31,11 +31,11 @@ final class ChartXValueFormatter: AxisValueFormatter {
         //let timezoneOffset = TimeZone.current.secondsFromGMT()
         //let epochTimezoneOffset = value + Double(timezoneOffset)
         if dateTimeUtils.is24Hour() {
-            dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
+            dateFormatter.setLocalizedDateFormatFromTemplate("M/d'T'HH:mm")
         } else {
             dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm")
         }
-        
+ 
         //let date = Date(timeIntervalSince1970: epochTimezoneOffset)
         let date = Date(timeIntervalSince1970: value)
         let formattedDate = dateFormatter.string(from: date)

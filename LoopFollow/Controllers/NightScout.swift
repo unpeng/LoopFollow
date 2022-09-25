@@ -119,7 +119,7 @@ extension MainViewController {
         // Set the count= in the url either to pull day(s) of data or only the last record
         var points = "1"
         if !onlyPullLastRecord {
-            points = String(graphHours * 12 + 1)
+            points = String(graphHours * 20 + 1)
         }
         
         // URL processor
@@ -129,6 +129,10 @@ extension MainViewController {
         } else {
             urlBGDataPath = urlBGDataPath + "token=" + token + "&count=" + points
         }
+        
+        // edit by peng
+        urlBGDataPath += "&find[dateString][$gte]=" + dateTimeUtils.nowMinusNDaysTimeInterval(N: UserDefaultsRepository.downloadDays.value)
+        
         guard let urlBGData = URL(string: urlBGDataPath) else {
             // if we have Dex data, use it
             if !dexData.isEmpty {
@@ -237,6 +241,8 @@ extension MainViewController {
         if UserDefaultsRepository.debugLog.value { self.writeDebugLog(value: "Process: BG") }
         
         let graphHours = 24 * UserDefaultsRepository.downloadDays.value
+        // edit by wangp
+        if data.count < 1 { return }
         
         let pullDate = data[data.count - 1].date
         let latestDate = data[0].date
@@ -345,9 +351,41 @@ extension MainViewController {
             }
             else
             {
-                self.DirectionText.text = ""
-                snoozerDirection = ""
-                self.latestDirectionString = ""
+                if latestEntryi > 0 {
+                    let difference = entries[latestEntryi].sgv - entries[latestEntryi - 1].sgv
+                    let floatValue : Float = Float(difference) * 0.0555
+                    var directionBG : String = ""
+                    if floatValue <= 0.19  && floatValue >= -0.19 {
+                        directionBG = "Flat"
+                    }
+                    else if floatValue > 0.19 && floatValue <= 0.5 {
+                        directionBG = "FortyFiveUp"
+                    }
+                    else if floatValue > 0.5 && floatValue <= 1 {
+                        directionBG = "SingleUp"
+                    }
+                    else if floatValue > 1 {
+                        directionBG = "DoubleUp"
+                    }
+                    else if floatValue < -0.19 && floatValue >= -0.5 {
+                        directionBG = "FortyFiveDown"
+                    }
+                    else if floatValue < -0.5 && floatValue >= -1 {
+                        directionBG = "SingleDown"
+                    }
+                    else if floatValue < -1 {
+                        directionBG = "DoubleDown"
+                    }
+                    self.DirectionText.text = self.bgDirectionGraphic(directionBG)
+                    snoozerDirection = self.bgDirectionGraphic(directionBG)
+                    self.latestDirectionString = self.bgDirectionGraphic(directionBG)
+                }
+                else
+                {
+                    self.DirectionText.text = ""
+                    snoozerDirection = ""
+                    self.latestDirectionString = ""
+                }
             }
             
             if deltaBG < 0 {
@@ -489,7 +527,11 @@ extension MainViewController {
                     latestPumpVolume = 50.0
                     tableData[5].value = "50+U"
                 }
-                
+                if let pumpBattery = lastPumpRecord["battery"] as? [String:AnyObject] {
+                    if let percent = pumpBattery["percent"] as? Int64 {
+                        tableData[5].value += " / " + String(percent) + "%"
+                    }
+                }
                 if let uploader = lastDeviceStatus?["uploader"] as? [String:AnyObject] {
                     let upbat = uploader["battery"] as! Double
                     tableData[4].value = String(format:"%.0f", upbat) + "%"
@@ -516,12 +558,13 @@ extension MainViewController {
 
                         }
                     }
+                    // edit by peng
                     if let iobdata = lastLoopRecord["iob"] as? [String:AnyObject] {
-                        tableData[0].value = String(format:"%.2f", (iobdata["iob"] as! Double))
+                        tableData[0].value = String(format:"%.2f", (iobdata["iob"] as! Double)) + "U"
                         latestIOB = String(format:"%.2f", (iobdata["iob"] as! Double))
                     }
                     if let cobdata = lastLoopRecord["cob"] as? [String:AnyObject] {
-                        tableData[1].value = String(format:"%.0f", cobdata["cob"] as! Double)
+                        tableData[1].value = String(format:"%.1f", cobdata["cob"] as! Double) + "g"
                         latestCOB = String(format:"%.0f", cobdata["cob"] as! Double)
                     }
                     if let predictdata = lastLoopRecord["predicted"] as? [String:AnyObject] {
@@ -544,7 +587,7 @@ extension MainViewController {
                             
                             let predMin = prediction.min()
                             let predMax = prediction.max()
-                            tableData[9].value = bgUnits.toDisplayUnits(String(predMin!)) + "/" + bgUnits.toDisplayUnits(String(predMax!))
+                            tableData[9].value = bgUnits.toDisplayUnits(String(predMin!)) + "~" + bgUnits.toDisplayUnits(String(predMax!))
                             
                             updatePredictionGraph()
                         }
@@ -1275,10 +1318,10 @@ extension MainViewController {
             //if i == tempArray.count - 1 && dateTimeStamp + duration <= dateTimeUtils.getNowTimeIntervalUTC() {
             if i == tempArray.count - 1 && duration == 0.0 {
                 lastEndDot = dateTimeStamp + (30 * 60)
-                latestBasal = String(format:"%.2f", basalRate)
+                latestBasal = String(format:"%.3f", basalRate)
             } else {
                 lastEndDot = dateTimeStamp + (duration * 60)
-                latestBasal = String(format:"%.2f", basalRate)
+                latestBasal = String(format:"%.3f", basalRate)
             }
             
             // Double check for overlaps of incorrectly ended TBRs and sent it to end when the next one starts if it finds a discrepancy
@@ -1327,7 +1370,7 @@ extension MainViewController {
                 }
             }
             
-            latestBasal = String(format:"%.2f", scheduled)
+            latestBasal = String(format:"%.3f", scheduled)
             // Make the starting dot at the last ending dot
             let startDot = basalGraphStruct(basalRate: scheduled, date: Double(lastEndDot))
             basalData.append(startDot)
@@ -1337,7 +1380,7 @@ extension MainViewController {
             basalData.append(endDot)
             
         }
-        tableData[2].value = latestBasal
+        tableData[2].value = latestBasal + "U/小时"
         infoTable.reloadData()
         if UserDefaultsRepository.graphBasal.value {
             updateBasalGraph()

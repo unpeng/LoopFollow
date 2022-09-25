@@ -733,7 +733,7 @@ extension MainViewController {
 
             
             var valueString: String = formatter.string(from: NSNumber(value: carbData[i].value))!
-            
+            valueString += "g"
             var hours = 3
             if carbData[i].absorptionTime > 0 && UserDefaultsRepository.showAbsorption.value {
                 hours = carbData[i].absorptionTime / 60
