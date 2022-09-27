@@ -38,7 +38,18 @@ class RemoteCommandController: FormViewController {
             ), onDismiss: nil)
          }
         
-        +++ Section(header: "v1.2 仅供测试使用", footer: "Copyright © 2022 爬爬")
+        <<< ButtonRow() {
+            $0.title = "远程覆盖"
+            $0.presentationMode = .show(
+                controllerProvider: .callback(builder: {
+                   let controller = RemoteOverrideViewController()
+                   controller.appStateController = self.appStateController
+                   return controller
+                }
+            ), onDismiss: nil)
+         }
+        
+        +++ Section(header: "v1.3 仅供测试使用", footer: "Copyright © 2022 爬爬")
     }
     
 }
