@@ -241,7 +241,7 @@ extension MainViewController {
         if UserDefaultsRepository.debugLog.value { self.writeDebugLog(value: "Process: BG") }
         
         let graphHours = 24 * UserDefaultsRepository.downloadDays.value
-        // edit by wangp
+        // edit by peng
         if data.count < 1 { return }
         
         let pullDate = data[data.count - 1].date
@@ -920,6 +920,14 @@ extension MainViewController {
             return
         }
         if jsonDeviceStatus[keyPath: "message"] != nil { return }
+
+        let loop = try jsonDeviceStatus[keyPath: "loopSettings.overridePresets"] as! NSArray
+        UserDefaultsRepository.overridePresets.value.removeAll()
+        for i in 0..<loop.count {
+            let dict = loop[i] as! Dictionary<String, Any>
+            UserDefaultsRepository.overridePresets.value.append(dict["name"] as! String)
+        }
+            
         let basal = try jsonDeviceStatus[keyPath: "store.Default.basal"] as! NSArray
         basalProfile.removeAll()
         for i in 0..<basal.count {
