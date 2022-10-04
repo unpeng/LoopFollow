@@ -191,7 +191,15 @@ extension MainViewController {
         if UserDefaultsRepository.url.value != "" && UserDefaultsRepository.downloadTreatments.value {
                 WebLoadNSTreatments()
             }
+        
+        // edit by peng
+        if UserDefaultsRepository.highRefreshRateTimes.value > 0 {
+            UserDefaultsRepository.highRefreshRateTimes.value -= 1
+            startTreatmentsTimer(time: 4)
+        }
+        else {
             startTreatmentsTimer()
+        }
     }
     
     // Profile Timer

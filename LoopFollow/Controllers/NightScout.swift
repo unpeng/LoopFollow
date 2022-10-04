@@ -561,7 +561,7 @@ extension MainViewController {
                     tableData[5].value = String(format:"%.0f", reservoirData) + "U"
                 } else {
                     latestPumpVolume = 50.0
-                    tableData[5].value = "50+U"
+                    tableData[5].value = "50U+"
                 }
                 if let pumpBattery = lastPumpRecord["battery"] as? [String:AnyObject] {
                     if let percent = pumpBattery["percent"] as? Int64 {

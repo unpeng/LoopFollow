@@ -36,7 +36,7 @@ class UserDefaultsRepository {
     // Remote Settings
     // edit by peng
     static let highRefreshRateTimes = UserDefaultsValue<Int>(key: "highRefreshRateTimes", default: 0)
-    static let overridePresets = UserDefaultsValue<[String]>(key: "overridePresets", default: ["普通餐前"])
+    static let overridePresets = UserDefaultsValue<[String]>(key: "overridePresets", default: [])
     // Nightscout Settings
     static let showNS = UserDefaultsValue<Bool>(key: "showNS", default: false)
     static let url = UserDefaultsValue<String>(key: "url", default: "")

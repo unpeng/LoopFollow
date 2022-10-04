@@ -164,12 +164,12 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         //infoTable.layer.borderColor = UIColor.darkGray.cgColor
         //infoTable.layer.borderWidth = 1.0
         //infoTable.layer.cornerRadius = 6
+
         infoTable.rowHeight = 24
         infoTable.dataSource = self
         infoTable.tableFooterView = UIView(frame: .zero) // get rid of extra rows
         infoTable.bounces = false
         infoTable.addBorder(toSide: .Left, withColor: UIColor.darkGray.cgColor, andThickness: 2)
-        
         // initialize the tableData
         self.tableData = []
         for i in 0..<UserDefaultsRepository.infoNames.value.count {
@@ -319,6 +319,53 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         let values = derivedTableData[indexPath.row]
         cell.textLabel?.text = values.name
         cell.detailTextLabel?.text = values.value
+        cell.backgroundColor = .clear
+    
+        if values.value != "" {
+            switch values.name
+            {
+            case "手机电量":
+                if let intValue = Int(String(values.value.dropLast(1))){
+                    if intValue <= 15 {
+                        cell.backgroundColor = .red.withAlphaComponent(0.5)
+                    } else if intValue <= 25 {
+                        cell.backgroundColor = .systemYellow.withAlphaComponent(0.5)
+                    }
+                }
+            case "探头":
+                let range = values.value.range(of: "天")!
+                let location = values.value.distance(from: values.value.startIndex, to: range.lowerBound)
+                if let intValue = Int(values.value.prefix(location)) {
+                    if intValue >= 9 {
+                        cell.backgroundColor = .red.withAlphaComponent(0.5)
+                    } else if intValue >= 8 {
+                        cell.backgroundColor = .systemYellow.withAlphaComponent(0.5)
+                    }
+                }
+            case "管路":
+                let range = values.value.range(of: "天")!
+                let location = values.value.distance(from: values.value.startIndex, to: range.lowerBound)
+                if let intValue = Int(values.value.prefix(location)) {
+                    if intValue >= 4 {
+                        cell.backgroundColor = .red.withAlphaComponent(0.5)
+                    } else if intValue >= 3 {
+                        cell.backgroundColor = .systemYellow.withAlphaComponent(0.5)
+                    }
+                }
+            case "泵容量/电量":
+                let range = values.value.range(of: "U")!
+                let location = values.value.distance(from: values.value.startIndex, to: range.lowerBound)
+                if let intValue = Int(values.value.prefix(location)) {
+                    if intValue <= 25 {
+                        cell.backgroundColor = .systemYellow.withAlphaComponent(0.5)
+                    } else if intValue <= 10 {
+                        cell.backgroundColor = .red.withAlphaComponent(0.5)
+                    }
+                }
+
+            default: cell.backgroundColor = .clear
+            }
+        }
         return cell
     }
     

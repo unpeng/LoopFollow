@@ -126,8 +126,7 @@ class RemoteOverrideViewController: FormViewController {
                /// 确认
                let sureAction = UIAlertAction(title: "确认", style: UIAlertAction.Style.default) {(_) in
 
-                   
-                doEntry(parameters: overrideParameters, app: self.appStateController)
+                   doEntry(parameters: overrideParameters, app: self.appStateController)
                    
                    self.dismiss(animated:true, completion: nil)
                }
