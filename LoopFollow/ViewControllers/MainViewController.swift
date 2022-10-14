@@ -16,6 +16,7 @@ import Photos
 class MainViewController: UIViewController, UITableViewDataSource, ChartViewDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var BGText: UILabel!
+    @IBOutlet weak var LoopText: UILabel!
     @IBOutlet weak var DeltaText: UILabel!
     @IBOutlet weak var DirectionText: UILabel!
     @IBOutlet weak var BGChart: LineChartView!
@@ -155,7 +156,7 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         UserDefaultsRepository.infoNames.value.append("管路")
         UserDefaultsRepository.infoNames.value.append("Rec. Bolus")
         UserDefaultsRepository.infoNames.value.append("预测高低峰")
-        
+        UserDefaultsRepository.infoNames.value.append("剂量策略")
         // Reset deprecated settings
         UserDefaultsRepository.debugLog.value = false;
         UserDefaultsRepository.alwaysDownloadAllBG.value = true;
@@ -191,6 +192,8 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         // setup show/hide small graph and stats
         BGChartFull.isHidden = !UserDefaultsRepository.showSmallGraph.value
         statsView.isHidden = !UserDefaultsRepository.showStats.value
+        
+        BGChart.doubleTapToZoomEnabled = false
         
         BGChart.delegate = self
         BGChartFull.delegate = self
@@ -301,8 +304,15 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         
         self.derivedTableData = []
         for i in 0..<self.tableData.count {
-            if(UserDefaultsRepository.infoVisible.value[UserDefaultsRepository.infoSort.value[i]]) {
-                self.derivedTableData.append(self.tableData[UserDefaultsRepository.infoSort.value[i]])
+            if UserDefaultsRepository.infoVisible.value.count > i {
+                if(UserDefaultsRepository.infoVisible.value[UserDefaultsRepository.infoSort.value[i]]) {
+                    self.derivedTableData.append(self.tableData[UserDefaultsRepository.infoSort.value[i]])
+                }
+            } else {
+                UserDefaultsRepository.infoVisible.value.append(true)
+                if(UserDefaultsRepository.infoVisible.value[UserDefaultsRepository.infoSort.value[i]]) {
+                    self.derivedTableData.append(self.tableData[UserDefaultsRepository.infoSort.value[i]])
+                }
             }
         }
    }
@@ -311,7 +321,6 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return tableData.count
         return derivedTableData.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -401,8 +410,6 @@ class MainViewController: UIViewController, UITableViewDataSource, ChartViewDele
         showHideNSDetails()
     }
     
-    
-
     //update Min Ago Text. We need to call this separately because it updates between readings
     func updateMinAgo(){
         if UserDefaultsRepository.debugLog.value { self.writeDebugLog(value: "Update min ago text") }

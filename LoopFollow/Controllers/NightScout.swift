@@ -478,7 +478,6 @@ extension MainViewController {
         var requestDeviceStatus = URLRequest(url: urlDeviceStatus)
         requestDeviceStatus.cachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
         
-        
         let deviceStatusTask = URLSession.shared.dataTask(with: requestDeviceStatus) { data, response, error in
             
             guard error == nil else {
@@ -630,6 +629,20 @@ extension MainViewController {
                     }
                     if let recBolus = lastLoopRecord["recommendedBolus"] as? Double {
                         tableData[8].value = String(format:"%.2fU", recBolus)
+                    }
+                    if let automaticDosingStrategy = lastLoopRecord["automaticDosingStrategy"] as? String {
+                        switch automaticDosingStrategy
+                        {
+                        case "automaticBolus":
+                            tableData[10].value = "自动推注"
+                        case "tempBasalOnly":
+                            tableData[10].value = "仅基础率"
+                        default:
+                            tableData[10].value = "仅基础率"
+                        }
+                    }
+                    if let loopVersion = lastLoopRecord["version"] as? String {
+                        LoopText.text = "Loop\nv" + loopVersion
                     }
                     if let loopStatus = lastLoopRecord["recommendedTempBasal"] as? [String:AnyObject] {
                         if let tempBasalTime = formatter.date(from: (loopStatus["timestamp"] as! String))?.timeIntervalSince1970 {

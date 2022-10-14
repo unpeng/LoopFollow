@@ -13,6 +13,7 @@
 		AADB6C8E28E02C7C0060DA9E /* RemoteCommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */; };
 		AADB6C9028E03B170060DA9E /* Environment+Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C8F28E03B170060DA9E /* Environment+Authenticate.swift */; };
 		AADB6C9428E1D1F80060DA9E /* RemoteOverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB6C9328E1D1F80060DA9E /* RemoteOverrideViewController.swift */; };
+		AAF39D0328F6674500A2A75F /* AutomaticDosingStrategyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF39D0228F6674500A2A75F /* AutomaticDosingStrategyViewController.swift */; };
 		DD152D3B24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */; };
 		DD98F54424BCEFEE0007425A /* ShareClientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */; };
 		DDCF979424C0D380002C9752 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF979324C0D380002C9752 /* UIViewExtension.swift */; };
@@ -186,6 +187,7 @@
 		AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommandController.swift; sourceTree = "<group>"; };
 		AADB6C8F28E03B170060DA9E /* Environment+Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Authenticate.swift"; sourceTree = "<group>"; };
 		AADB6C9328E1D1F80060DA9E /* RemoteOverrideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOverrideViewController.swift; sourceTree = "<group>"; };
+		AAF39D0228F6674500A2A75F /* AutomaticDosingStrategyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticDosingStrategyViewController.swift; sourceTree = "<group>"; };
 		DD152D3A24C01B2300361FA2 /* InfoDisplaySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDisplaySettingsViewController.swift; sourceTree = "<group>"; };
 		DD98F54324BCEFEE0007425A /* ShareClientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareClientExtension.swift; sourceTree = "<group>"; };
 		DDCF979324C0D380002C9752 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				AADB6C8B28E02C450060DA9E /* BolusEntryViewController.swift */,
 				AADB6C8D28E02C7C0060DA9E /* RemoteCommandController.swift */,
 				AADB6C9328E1D1F80060DA9E /* RemoteOverrideViewController.swift */,
+				AAF39D0228F6674500A2A75F /* AutomaticDosingStrategyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				FC97881C2485969B00A7906C /* MainViewController.swift in Sources */,
 				FC1BB3A8252CA4C5003839C2 /* UIImageExtension.swift in Sources */,
 				AADB6C8C28E02C450060DA9E /* BolusEntryViewController.swift in Sources */,
+				AAF39D0328F6674500A2A75F /* AutomaticDosingStrategyViewController.swift in Sources */,
 				DDCF979624C1443C002C9752 /* GeneralSettingsViewController.swift in Sources */,
 				FCC0FAC224922A22003E610E /* DictionaryKeyPath.swift in Sources */,
 				FC9788182485969B00A7906C /* AppDelegate.swift in Sources */,

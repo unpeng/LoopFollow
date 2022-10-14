@@ -48,8 +48,19 @@ class RemoteCommandController: FormViewController {
                 }
             ), onDismiss: nil)
          }
+
+        <<< ButtonRow() {
+            $0.title = "剂量策略"
+            $0.presentationMode = .show(
+                controllerProvider: .callback(builder: {
+                   let controller = AutomaticDosingStrategyViewController()
+                   controller.appStateController = self.appStateController
+                   return controller
+                }
+            ), onDismiss: nil)
+         }
         
-        +++ Section(header: "v1.3 仅供测试使用", footer: "Copyright © 2022 爬爬")
+        +++ Section(header: "v1.3.1", footer: "Important Disclaimer \n\rYou take full responsiblility for running this system and do so at your own risk.")
     }
     
 }
